@@ -1,0 +1,19 @@
+#BlueJ class context
+comment0.target=Cup
+comment0.text=\r\n\ La\ clase\ Cup\ contiene\ todos\ la\ logica\ y\ configuracion\ para\r\n\ la\ representacion\ del\ objeto\ en\ cuestion\r\n\r\n\ @author\:\ Jose\ Alejandro\ Martinez\ Arias\r\n\r\n\ @version\:\ 2026-02-14\r\n
+comment1.params=id\ color
+comment1.target=Cup(int,\ java.lang.String)
+comment1.text=\r\n\ Crea\ un\ nueva\ taza\ \r\n\ @param\ id\ identificador\ de\ la\ taza\r\n\ @param\ color\ Color\ de\ la\ taza\r\n
+comment2.params=
+comment2.target=int\ getId()
+comment2.text=\r\n\ Retornar\ el\ identificador\ de\ la\ taza\r\n\ @retorn\ id\ identificador\ de\ la\ taza\r\n
+comment3.params=
+comment3.target=int\ getHeight()
+comment3.text=\r\n\ Retorna\ la\ altura\ de\ la\ taza\r\n\ @return\ height\ altura\ de\ la\ taza\r\n
+comment4.params=
+comment4.target=void\ makeVisible()
+comment4.text=\r\n\ Hacer\ visible\ la\ taza\r\n
+comment5.params=
+comment5.target=void\ makeInvisible()
+comment5.text=\r\n\ Hacer\ invisible\ la\ taza\r\n
+numComments=6
