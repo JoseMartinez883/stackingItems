@@ -22,12 +22,11 @@ public class Canvas{
     private static Canvas canvasSingleton;
 
     /**
-     * Factory method to get the canvas singleton object.
-     */
+    * Factory method to get the canvas singleton object.
+    */
     public static Canvas getCanvas(){
         if(canvasSingleton == null) {
-            canvasSingleton = new Canvas("BlueJ Shapes Demo", 300, 300, 
-                                         Color.white);
+            canvasSingleton = new Canvas("BlueJ Shapes Demo", 600, 600,Color.white);
         }
         canvasSingleton.setVisible(true);
         return canvasSingleton;
@@ -93,16 +92,12 @@ public class Canvas{
      // objects. It is carefully designed to keep the visible shape interfaces
      // in this project clean and simple for educational purposes.
     public void draw(Object referenceObject, String color, Shape shape){
-       draw(referenceObject, color, shape, true);
-    }
-     
-    public void draw(Object referenceObject, String color, Shape shape, boolean filled) {
         objects.remove(referenceObject);   // just in case it was already there
         objects.add(referenceObject);      // add at the end
-        shapes.put(referenceObject, new ShapeDescription(shape, color, filled));
+        shapes.put(referenceObject, new ShapeDescription(shape, color));
         redraw();
     }
-    
+ 
     /**
      * Erase a given shape's from the screen.
      * @param  referenceObject  the shape object to be erased 
@@ -192,24 +187,35 @@ public class Canvas{
     private class ShapeDescription{
         private Shape shape;
         private String colorString;
-        private boolean filled; 
 
-        public ShapeDescription(Shape shape, String color, boolean filled){
+        public ShapeDescription(Shape shape, String color){
             this.shape = shape;
             colorString = color;
-            this.filled = filled;
         }
 
         public void draw(Graphics2D graphic){
             setForegroundColor(colorString);
-            
-            if (filled){
-                graphic.fill(shape);
-            } else {
-                graphic.setStroke(new BasicStroke(2)); 
-                graphic.draw(shape); 
-            }
+            graphic.draw(shape);
+            graphic.fill(shape);
         }
     }
 
+    // Nuevos metodos uso de IA
+    /**
+     * Devuele el tamaño del ancho del canva
+     * @return canvas.getWidth() que devuelve el ancho de la pantalla canvas
+     */
+    public int getWidth() {
+        return canvas.getWidth();
+    }
+    
+    /**
+     * Devuele el tamaño del alto del canva
+     * @return canvas.getHeight() que devuelve el alto de la pantalla canvas
+     */
+    public int getHeight() {
+        return canvas.getHeight();
+    }
+    // Fin uso de IA
 }
+

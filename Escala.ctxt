@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=Escala
+comment0.text=\r\n\ Encargada\ de\ representar\ las\ escalas\ (regla)\ de\ la\ altura\ de\ la\ torre\r\n\ \r\n\ @author\ Jose\ Alejandro\ Martinez\ Arias\r\n\ @version\ (16-02-2026)\r\n
+comment1.params=x\ y\ alturaMax\ factor\ ancho
+comment1.target=Escala(int,\ int,\ int,\ int,\ int)
+comment1.text=\r\n\ Construye\ un\ base\ rectangular\ (suelo)\ y\ una\ escala\ que\ marca\ los\ centimetros\r\n\ @param\ x\ posicion\ en\ el\ eje\ x\ donde\ se\ dibujara\ la\ regla\r\n\ @param\ y\ posicion\ inicial\ en\ el\ eje\ y\ donde\ comenzara\ a\ graficarla\r\n\ @param\ alturaMax\ altura\ maxima\ de\ la\ torre\r\n\ @param\ factor\ factor\ pixeles\ del\ eje\ y\r\n\ @param\ ancho\ que\ tendra\ cada\ linea\ de\ la\ regla\r\n
+comment2.params=
+comment2.target=void\ makeVisible()
+comment2.text=\r\n\ Hacer\ visible\ el\ suelo\ y\ la\ escala\r\n
+comment3.params=
+comment3.target=void\ makeInvisible()
+comment3.text=\r\n\ Hacer\ invisible\ el\ suelo\ y\ la\ escala\r\n
+numComments=4

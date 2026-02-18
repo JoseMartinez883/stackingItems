@@ -19,7 +19,6 @@ public class Rectangle{
     private int yPosition;
     private String color;
     private boolean isVisible;
-    private boolean isFilled;
 
     /**
      * Create a new rectangle at default position with default color.
@@ -31,15 +30,6 @@ public class Rectangle{
         yPosition = 15;
         color = "magenta";
         isVisible = false;
-        isFilled = true;
-    }
-    
-    /**
-     * Cambiar el relleno del rectangulo
-     */
-    public void changeFilled(boolean newFilled){
-        isFilled = newFilled;
-        draw();
     }
     
     /**
@@ -177,7 +167,7 @@ public class Rectangle{
             Canvas canvas = Canvas.getCanvas();
             canvas.draw(this, color,
                 new java.awt.Rectangle(xPosition, yPosition, 
-                                       width, height), isFilled); 
+                                       width, height));
             canvas.wait(10);
         }
     }
@@ -190,6 +180,19 @@ public class Rectangle{
             Canvas canvas = Canvas.getCanvas();
             canvas.erase(this);
         }
+    }
+    
+    // Nuevo metodo
+    /**
+     * Modificar la posicion del rectangulo en pantalla (canvas)
+     * @param x posicion en el eje x de la figura
+     * @param y posicion en el eje y de la figura
+     */
+    public void setPosition(int x, int y) {
+        erase();
+        this.xPosition = x;
+        this.yPosition = y;
+        draw(); 
     }
 }
 

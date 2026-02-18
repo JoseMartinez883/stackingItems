@@ -14,12 +14,14 @@ public class Lid {
      * @param height altura del techo
      * @param color color del techo
      * @param shape forma del techo
+     * @param width ancho del techo
     */
    
     private int id;
     private int height;
     private String color;
     private Rectangle shape;
+    private int width;
     
     /**
      * Crea un nuevo techo
@@ -30,11 +32,9 @@ public class Lid {
         this.id = id;
         this.color = color;
         this.height = 1;  
-        
+        this.width = id;
         shape = new Rectangle();
-        shape.changeColor(color); 
-        shape.changeSize(5, 30 +(id * 10)); 
-        shape.changeFilled(true); 
+        shape.changeColor(color);  
     }
     
     /**
@@ -54,6 +54,14 @@ public class Lid {
     }
     
     /**
+     * Obtener el ancho del techo
+     * @return width ancho del techo
+     */
+     public int getWidth(){
+        return width;
+    }
+    
+    /**
      * Hacer visible del techo
      */
     public void makeVisible(){
@@ -67,5 +75,19 @@ public class Lid {
         shape.makeInvisible();
     }
     
+    /**
+     * Establecer el ancho y alto en pantalla
+     */
+    public void setSizeScreen(int factorx,int factory){
+        shape.changeSize(factorx * height, factory * width);
+    } 
     
+    /**
+     * Establecer la posicion de la taza
+     * @param int x posicion en el eje x
+     * @param int y posicion en el eje y
+     */
+    public void setPosition(int x, int y) {
+        this.shape.setPosition(x, y);
+    }
 }
