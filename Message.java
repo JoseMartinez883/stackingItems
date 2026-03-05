@@ -1,5 +1,6 @@
 import javax.swing.JOptionPane;
 import java.util.ArrayList;
+
 /**
  * Encargada de representar en pantalla un mensaje que 
  * valida la no buena ejecucion de una operacion.
@@ -33,7 +34,6 @@ public class Message{
                 tituloError, JOptionPane.ERROR_MESSAGE);
         }
     }
-    
     
     /**
      * Mostar en pantalla el error de agregar un techo, si ya se encuentra
@@ -152,9 +152,8 @@ public class Message{
      */    
     public void errorInfoPopLidId(boolean isVisible){
         if (isVisible) { 
-            JOptionPane.showMessageDialog(null, 
-                "El techo a eliminar no se encuentra en la torre",
-                tituloError, JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "El techo a eliminar no se encuentra en la torre",
+            tituloError, JOptionPane.ERROR_MESSAGE);
         } 
     }
     
@@ -165,4 +164,24 @@ public class Message{
         JOptionPane.showMessageDialog(null, "La torre es demasiado alta para la pantalla",
             tituloError, JOptionPane.ERROR_MESSAGE);
     }
+    
+    /**
+     * Mostrar en pantalla, los elementos que se deben cambiar en la torre
+     */
+    public void showSwapToReduce(boolean isVisible, String[][] movimiento){
+       String  infoElements = "{";
+       if (isVisible) { 
+            for(int i = 0; i < movimiento.length; i++){
+                infoElements += "{\"" + movimiento[i][0] + "\", \"" + movimiento[i][1] + "\"}";
+            
+                if (i < movimiento.length - 1) {
+                    infoElements += ", ";
+                }
+            }
+            infoElements += "}";
+            JOptionPane.showMessageDialog(null, infoElements,
+            TituloInformacion, JOptionPane.INFORMATION_MESSAGE);
+        }  
+    }
+    
 }

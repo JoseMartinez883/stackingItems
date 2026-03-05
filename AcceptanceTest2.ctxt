@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.target=AcceptanceTest2
+comment0.text=\r\n\ Pruebas\ de\ aceptacion\ verificando\ el\ funcionamiento\ del\ simulador\r\n\ *\ @author\ Jose\ Alejandro\ Martinez\ Arias\r\n\ @version\ 2026-02\r\n
+comment1.params=
+comment1.target=void\ aceptacion1()
+comment1.text=\r\n\ Prueba\ de\ aceptacion\ para\ verificar\ metodos\ del\ ciclo\ 2\r\n
+comment2.params=
+comment2.target=void\ aceptacion2()
+comment2.text=\r\n\ Prueba\ de\ aceptacion\ para\ verificar\ metodos\ del\ ciclo\ 2\r\n
+comment3.params=mensaje
+comment3.target=void\ esperar(java.lang.String)
+numComments=4

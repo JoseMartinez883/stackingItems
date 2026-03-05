@@ -15,6 +15,8 @@ public class Lid {
      * @param color color del techo
      * @param shape forma del techo
      * @param width ancho del techo
+     * @param cup copa del techo
+     * @param HEIGHT_LID altura del techo
     */
    
     private int id;
@@ -22,6 +24,8 @@ public class Lid {
     private String color;
     private Rectangle shape;
     private int width;
+    private Cup cup;
+    private final static int HEIGHT_LID = 1;
     
     /**
      * Crea un nuevo techo
@@ -31,7 +35,7 @@ public class Lid {
     public Lid(int id, String color){
         this.id = id;
         this.color = color;
-        this.height = 1;  
+        this.height = HEIGHT_LID;  
         this.width = id;
         shape = new Rectangle();
         shape.changeColor(color);  
@@ -78,8 +82,8 @@ public class Lid {
     /**
      * Establecer el ancho y alto en pantalla
      */
-    public void setSizeScreen(int factorx,int factory){
-        shape.changeSize(factorx * height, factory * width);
+    public void setSizeScreen(int heightPixels,int widthPixels){
+        shape.changeSize(heightPixels, widthPixels);
     } 
     
     /**
@@ -90,4 +94,22 @@ public class Lid {
     public void setPosition(int x, int y) {
         this.shape.setPosition(x, y);
     }
+    
+    /**
+    * Asocia esta tapa con una taza específica.
+    */
+    public void setCup(Cup cup) {
+        this.cup = cup;
+    }
+
+    /**
+     * Retorna la taza asociada a esta tapa (o null si está suelta).
+     */
+    public Cup getCup() {
+        return cup;
+    }
+    
+    public static int calculateHeight(int id) {
+        return HEIGHT_LID;
+    } 
 }

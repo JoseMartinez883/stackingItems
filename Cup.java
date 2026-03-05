@@ -3,6 +3,7 @@
  * @author: Jose Alejandro Martinez Arias
  * @version: 2026-02-14
  */
+
 public class Cup {
     /**
      * @param id identificador la taza, determina ancho y alto
@@ -12,7 +13,11 @@ public class Cup {
      * @param base, representa la base de la taza
      * @param leftWall, pared izquierda de la taza
      * @param rigthWall, pared derecha de la taza
+     * @param WALL_THICKNESS grosor de las paredes
+     * @param HEIGHT_BASE altura de la base 
+     * @param lid tapa correspodiente a la copa
      */
+    
     private int id;
     private int height;
     private int width;
@@ -21,6 +26,9 @@ public class Cup {
     private Rectangle base;
     private Rectangle leftWall;
     private Rectangle rightWall;
+    private static final int WALL_THICKNESS = 10;
+    private static final int HEIGHT_BASE = 1;
+    private Lid lid; 
     
     /**
      * Creo una taza
@@ -50,10 +58,10 @@ public class Cup {
      */
     public void setSizeScreen(int hTotalPix, int wTotalPix, int hBasePix) {
         base.changeSize(hBasePix, wTotalPix);
-        if (id > 1) {
+        if (id > 1){
             int wallHeight = hTotalPix - hBasePix;
-            leftWall.changeSize(wallHeight, 10); 
-            rightWall.changeSize(wallHeight, 10);
+            leftWall.changeSize(wallHeight, WALL_THICKNESS); 
+            rightWall.changeSize(wallHeight, WALL_THICKNESS);
         }
     }
     
@@ -66,9 +74,8 @@ public class Cup {
         if (id > 1) {
             int hParedes = hTotalPix - hBasePix;
             int ySuperiorParedes = yPuntoApoyo - hParedes;
-            
             leftWall.setPosition(x, ySuperiorParedes);
-            rightWall.setPosition(x + wTotalPix - 10, ySuperiorParedes);
+            rightWall.setPosition(x + wTotalPix - WALL_THICKNESS, ySuperiorParedes);
         }
     }
     
@@ -116,5 +123,38 @@ public class Cup {
      */
     public int getWidth() { 
         return width; 
+    }
+    
+    /**
+     * Asignar la tapa de la copa
+     * @param lid tapa que le corresponde a la copa
+     */
+    public void setLid(Lid lid) {
+        this.lid = lid;
+    }
+    
+    /**
+     * Obtener la tapa de la copa 
+     * @return tapa de la copa
+     */
+    public Lid getLid() {
+        return lid;
+    }
+    
+    /**
+     * Retornar la altura de la base de la copa
+     * @return HEIGHT_BASE altura de la base
+     */
+    public int getAlturaBase() {
+        return HEIGHT_BASE; 
+    }   
+    
+    /**
+     * Calcular la altura de la copa
+     * @param id de la copa
+     * @return altura de la copa
+     */
+    public static int calculateHeight(int id) {
+        return (2 * id) - 1;
     }
 }
