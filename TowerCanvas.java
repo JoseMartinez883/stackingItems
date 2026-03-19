@@ -26,8 +26,8 @@ public class TowerCanvas {
     }
     
     /**
-    * dibuja los elementos de la torre en pantalla
-    */
+     * Dibuja los elementos de la torre en pantalla
+     */
     public void visible(ArrayList<ElementoTorre> items) {
         Canvas canvas = Canvas.getCanvas();
         int ySuelo = canvas.getHeight() - FLOOR_MARGIN;
@@ -38,33 +38,47 @@ public class TowerCanvas {
         }
         escala.makeVisible();
         
-        int yActual = ySuelo - FACTOR_HEIGHT;
-        ElementoTorre anterior = null;
-    
-        for (ElementoTorre actual : items) {
-            yActual = calcularNuevaNivelSuelo(yActual, actual, anterior);
-            actual.dibujar(xCentro, yActual, FACTOR_HEIGHT, FACTOR_WIDTH);            
-            anterior = actual;
+        int[] basesY = new int[items.size()];
+        int[] techosY = new int[items.size()];
+        
+        for (int i = 0; i < items.size(); i++) {
+            ElementoTorre actual = items.get(i);
+            int yFinal = calcularNuevaNivelSuelo(actual, i, items, basesY, techosY, ySuelo);
+            actual.dibujar(xCentro, yFinal, FACTOR_HEIGHT, FACTOR_WIDTH);
+            basesY[i] = yFinal;
+            techosY[i] = yFinal - (actual.getAlturaTotal() * FACTOR_HEIGHT);
         }
     }
         
     /**
-    * Calcula la coordenada Y para el siguiente elemento.
-    */
-    private int calcularNuevaNivelSuelo(int yActual, ElementoTorre actual, ElementoTorre anterior) {
-        if (anterior == null) return yActual;
-
-        boolean encajeTaza = (actual.getCup() != null && anterior.getCup() != null 
-            && actual.getId() < anterior.getId() && anterior.getCup().getLid() == null);
+     * Calcula la coordenada Y final de un elemento simulando gravedad y colisiones
+     * contra todos los elementos que ya están en la torre.
+     */
+    private int calcularNuevaNivelSuelo(ElementoTorre actual, int indiceActual, ArrayList<ElementoTorre> items, int[] basesY, int[] techosY, int ySuelo) {
+        int yCaida = ySuelo - FACTOR_HEIGHT; 
+    
+        for (int j = 0; j < indiceActual; j++) {
+            ElementoTorre previo = items.get(j);
+            
+            boolean encajeTaza = (actual.getCup() != null && previo.getCup() != null 
+                && actual.getId() < previo.getId() && previo.getCup().getLid() == null);
                 
-        boolean encajeTapaSuelte = (actual.getLidOutCup() != null && anterior.getCup() != null 
-            && actual.getId() < anterior.getId() && anterior.getCup().getLid() == null);
-    
-        if (encajeTaza || encajeTapaSuelte) {
-            return yActual - (1 * FACTOR_HEIGHT); 
+            boolean encajeTapaSuelte = (actual.getLidOutCup() != null && previo.getCup() != null 
+                && actual.getId() < previo.getId() && previo.getCup().getLid() == null);
+            
+            int obstaculoY;
+            if (encajeTaza || encajeTapaSuelte) {
+                obstaculoY = basesY[j] - (1 * FACTOR_HEIGHT);
+            } else {
+                obstaculoY = techosY[j];
+            }
+            
+            if (obstaculoY < yCaida) {
+                yCaida = obstaculoY;
+            }
         }
-    
-        return yActual - (anterior.getAlturaTotal() * FACTOR_HEIGHT);
+        
+        return yCaida; 
     }
         
     /**

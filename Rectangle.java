@@ -2,13 +2,10 @@ import java.awt.*;
 
 /**
  * A rectangle that can be manipulated and that draws itself on a canvas.
- * 
  * @author  Michael Kolling and David J. Barnes (Modified)
  * @version 1.0  (15 July 2000)()
  */
 
-
- 
 public class Rectangle{
 
     public static int EDGES = 4;

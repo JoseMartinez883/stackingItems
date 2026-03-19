@@ -1,0 +1,20 @@
+#BlueJ class context
+comment0.target=TowerContestTest
+comment0.text=\r\n\ Pruebas\ de\ unidad\ de\ la\ solucion\ de\ ejercisio\ Stacking\ Cups\ \r\n\ Ciclo\ 3\r\n\ @Author\ Jose\ Alejandro\ Martinez\ Arias\r\n
+comment1.params=
+comment1.target=void\ setUp()
+comment2.params=
+comment2.target=void\ shouldReturnMaximumHeight()
+comment3.params=
+comment3.target=void\ shouldReturnMinimumHeight()
+comment4.params=
+comment4.target=void\ shouldHandleSpecialCase2NPlus1()
+comment5.params=
+comment5.target=void\ shouldHandleSpecialCase2NPlus12()
+comment6.params=
+comment6.target=void\ shouldHandleTheN2Minus2Gap()
+comment7.params=
+comment7.target=void\ shouldReturnImpossibleStrings()
+comment8.params=
+comment8.target=void\ shouldSolveRandomValidHeight()
+numComments=9

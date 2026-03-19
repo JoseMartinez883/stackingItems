@@ -1,11 +1,11 @@
 /**
  * Clase que contiene los diferentes elementos que puede tener la pila de elementos
  * La cual solo puede estar compuestas por cups y lids
-  * * @author: Jose Alejandro Martinez Arias
+* * @author: Jose Alejandro Martinez Arias
  * @version: 2026-03-28
  */
 
-public class ElementoTorre {
+public class ElementoTorre{
     /**
      * @param cup copa de la torre
      * @param lidOutCup corresponde a una taza que no esta junta a su copa

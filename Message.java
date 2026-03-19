@@ -170,7 +170,7 @@ public class Message{
      */
     public void showSwapToReduce(boolean isVisible, String[][] movimiento){
        String  infoElements = "{";
-       if (isVisible) { 
+       if (isVisible && movimiento != null) { 
             for(int i = 0; i < movimiento.length; i++){
                 infoElements += "{\"" + movimiento[i][0] + "\", \"" + movimiento[i][1] + "\"}";
             
@@ -181,7 +181,12 @@ public class Message{
             infoElements += "}";
             JOptionPane.showMessageDialog(null, infoElements,
             TituloInformacion, JOptionPane.INFORMATION_MESSAGE);
-        }  
+        } else {
+            if(isVisible && movimiento == null){
+                JOptionPane.showMessageDialog(null, "No hay mas cambios posibles para reducir la torre",
+                tituloError, JOptionPane.INFORMATION_MESSAGE);    
+            }
+        }
     }
     
 }

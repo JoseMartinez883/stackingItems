@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.target=TowerContestCTest
+comment0.text=\r\n\ Pruebas\ del\ simulador\ del\ ejercisio\ Stacking\ Cups\ Ciclo\ 3\r\n\ Casos\ planteados\ en\ el\ pdf\r\n\ @Author\ Jose\ Alejandro\ Martinez\ Arias\r\n
+comment1.params=
+comment1.target=void\ primerCaso()
+comment1.text=\r\n\ Primer\ caso\ del\ pdf\r\n
+comment2.params=
+comment2.target=void\ segundoCaso()
+comment2.text=\r\n\ Segundo\ caso\ del\ pdf\r\n
+numComments=3

@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.target=TowerContest
+comment1.params=n\ h
+comment1.target=java.lang.String\ solve(int,\ int)
+comment1.text=\r\n\ Se\ presenta\ la\ solucion\ del\ ejercisio\ Stacking\ Cups\r\n\ @param\ n\ numero\ de\ copas\ de\ la\ torre\r\n\ @param\ h\ altura\ deseada\ por\ el\ usuario\ con\ las\ copas\r\n\ @return\ Orden\ en\ que\ debemos\ apilar\ las\ copas\ si\ la\ altura\ se\ puede,\ sino\ 'impossible'\r\n
+comment2.params=n\ h
+comment2.target=void\ simulate(int,\ int)
+comment2.text=\r\n\ Simula\ la\ solucion\ del\ problema\ en\ pantalla\r\n\ @param\ n\ numero\ de\ copas\ de\ la\ torre\r\n\ @param\ h\ altura\ deseada\ que\ tenemos\ que\ construir\ con\ el\ numero\ de\ copas\ n\r\n
+comment3.params=mensaje
+comment3.target=void\ esperar(java.lang.String)
+numComments=4

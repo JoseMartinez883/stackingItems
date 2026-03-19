@@ -51,7 +51,6 @@ public class Tower{
      */
     public Tower(int n) {
         this(300, 70); 
-        
         for (int i = n; i >= 1; i--) {
             pushCup(i);
             if (!isOk) break; 
@@ -73,7 +72,7 @@ public class Tower{
         }
         int newCupHeight = Cup.calculateHeight(i);
         
-        if (height() + newCupHeight <= maxHeight) {
+        if (heightCalculate() + newCupHeight <= maxHeight) {
             String color = COLORS[i % COLORS.length];
             Cup newCup = new Cup(i, color);
             items.add(new ElementoTorre(newCup));
@@ -106,10 +105,10 @@ public class Tower{
      */
     public void pushLid(int i){
         isOk = false;
-
+        
         if (laTapaYaExiste(i)) {
             message.errorPushLid(isVisible);
-        } else if(height() + Lid.calculateHeight(i) > maxHeight)  {
+        } else if(heightCalculate() + Lid.calculateHeight(i) > maxHeight)  {
             message.errorPushLidFull(isVisible); 
         } else {
             isOk = true;
@@ -236,24 +235,50 @@ public class Tower{
     }
     
     /**
+     * Metodo auxiliar para determinar la altura actual de la torre
+     * @return altura actual de la torre
+     */
+    public int heightCalculate() {
+        int totalHeight = 0;
+        int[] alturaBase  = new int[items.size()];
+        int[] alturaTecho = new int[items.size()];
+        
+        for (int i = 0; i < items.size(); i++) {
+            ElementoTorre actual = items.get(i);
+            int nivelBase = 0;
+    
+            for (int j = 0; j < i; j++) {
+                ElementoTorre previo = items.get(j);
+    
+                boolean encaja = (actual.getCup() != null || actual.getLidOutCup() != null)
+                    && previo.getCup() != null && previo.getCup().getLid() == null
+                    && actual.getId() < previo.getId();
+    
+                int obstaculo = encaja ? alturaBase[j] + 1 : alturaTecho[j];
+    
+                if (obstaculo > nivelBase) {
+                    nivelBase = obstaculo;
+                }
+            }
+    
+            alturaBase[i]  = nivelBase;
+            alturaTecho[i] = nivelBase + actual.getAlturaTotal();
+    
+            if (alturaTecho[i] > totalHeight) {
+                totalHeight = alturaTecho[i];
+            }
+        }
+
+        return totalHeight;
+    }
+    
+    /**
      *  Calcula la altura de la torre
      *  @return totalHeight la altura total actual de la torre
      */
     public int height(){
-        int totalHeight = 0;
-        ElementoTorre anterior = null;
-        
-        for (ElementoTorre actual : items) {
-            boolean sonTazas = (anterior != null && actual.getCup() != null && anterior.getCup() != null); 
-            
-            if (sonTazas && actual.getId() < anterior.getId() && anterior.getCup().getLid() == null) { 
-            } else {
-                totalHeight += actual.getAlturaTotal();
-            }
-            anterior = actual;
-        }
-        
-        // message.showCurrentHeight(isVisible,totalHeight);
+        int totalHeight = heightCalculate();
+        message.showCurrentHeight(isVisible, totalHeight);
         return totalHeight;
     }
     
@@ -282,8 +307,8 @@ public class Tower{
     }
     
     /**
-     * Retorna los numeros de las tazas tapadas por sus tapas ordenados de menor a mayor
-     * Esto se sabe por los id
+     * Retorna los numeros de las tazas tapadas por sus tapas ordenados de menor a mayor, esto se sabe por los id
+     * @return lista con los id de los elementos con su taza-techo en la torre
      */
     public int[] lidedCups() {
         ArrayList<Integer> unidos = new ArrayList<>();
@@ -304,7 +329,7 @@ public class Tower{
         isOk = true;
         return resultado;
     }
-
+    
     /**
      * Proceso para organizar la torre (orderTower/reverseTower)
      * @boolean isOrder indica como se organizara la torre
@@ -355,6 +380,11 @@ public class Tower{
         if (isVisible) vista.visible(items);
     }
     
+    /**
+     * Metodo auxiliar para determinar la altura que aportan dos elementos
+     * @param actual elemento que buscamos posicionar en la torre
+     * @param anterior ultimo elemento posicionado en la torre
+     */
     private int calcularAporteAltura(ElementoTorre actual, ElementoTorre anterior) {
         int aporte = 0;
     
@@ -518,16 +548,18 @@ public class Tower{
         int index1 = buscarIndiceElemento(type1, id1);
         int index2 = buscarIndiceElemento(type2, id2);
         
-        if (index1 != -1 && index2 != -1 && index1 != index2) {
+        if (index1 != -1 && index2 != -1 && index1 != index2){
+
             Collections.swap(items, index1, index2);
             
-            if (height() <= maxHeight) {
+            if (heightCalculate() <= maxHeight) {
                 isOk = true;
+                
                 if (isVisible) vista.visible(items);
             } else {
                 Collections.swap(items, index1, index2);
             }
-        }
+        }      
     }
     
     /**
@@ -555,28 +587,31 @@ public class Tower{
      */
     public String[][] swapToReduce() {
         isOk = false;
-        int alturaInicial = height();
+        int mejorAltura = heightCalculate();
         String[][] movimiento = null;
         
         for (int i = 0; i < items.size(); i++) {
             for (int j = i + 1; j < items.size(); j++) {
-                
                 Collections.swap(items, i, j);
                 
-                if (height() < alturaInicial) {
+                int alturaActual = heightCalculate();
+
+                if (alturaActual < mejorAltura) {
                     isOk = true;
+                    mejorAltura = alturaActual;
                     movimiento = new String[][]{ getInfo(i), getInfo(j)};
-                    Collections.swap(items, i, j);
-                    break; 
                 }
                 Collections.swap(items, i, j);
             }
         }
         
-        message.showSwapToReduce(isVisible, movimiento);
         return movimiento;
     }
     
+    /**
+     * Metodo para identificar el tipo de elemento que tenemos y devolverlo
+     * @return una lista con la estructura: {"tipo", "id"};
+     */
     private String[] getInfo(int i) {
         ElementoTorre e = items.get(i);
         String tipo = (e.getCup() != null) ? "cup" : "lid";

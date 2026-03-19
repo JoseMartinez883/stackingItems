@@ -8,74 +8,88 @@ import javax.swing.JOptionPane;
 public class AcceptanceTest {
     public void casoAceptacion() {
 
-        Tower t = new Tower(300, 30); 
+        Tower t = new Tower(300, 30);
         t.makeVisible();
         
-        // Taza 1: Altura 1 (2*1 -1)
+        esperar("El limite de la torre es 30 cm");
+         
+        t.pushCup(10); 
+        esperar("Se agrego una taza de id 10, su altura es de 19 cm");
+        
+        t.pushLid(2);
+        esperar("Se agrego una tapa de id 2");
+        
+        t.height();
+        
         t.pushCup(1);
-        esperar("espera");
-        // Taza 3: Altura 5 (2*3 -1)
+        esperar("Se agrego una taza de id 1, su altura es de 1 cm");
+       
         t.pushCup(3);
-        esperar("espera");
-        // Taza 2: Altura 3 (2*2 -1)
+        esperar("Se agrego una taza de id 3, su altura es de 5 cm");
+        
         t.pushCup(2);
+        esperar("Se agrego una taza de id 2, su altura de 3 cm");
         
-        esperar("Se deben ver 3 tazas desordenadas (IDs: 1, 3, 2).");
-        
+        esperar("Se intentara agregar un techo de id 2, pero dara error");
         t.pushLid(2); 
-        esperar("espera");
-        t.pushLid(1);
+        esperar("Debio dar error ya que el techo de id 2 ya se encuentra");
         
-        esperar("Se añadieron tapas a la 2 y 1. La tapa debe ser del color de la taza.");
+        t.pushLid(1);
+        esperar("Se agrego una tapa de id 1");
 
-        // Alturas: Taza1(1) + Taza3(5) + Taza2(3) + Tapa2(1) + Tapa1(1) = 11 cm
+        
         t.height(); 
         
-        esperar("espera");
-        t.orderTower();
-        esperar("Torre Ordenada: Base(3) -> Medio(2+Tapa) -> Cima(1+Tapa).");
-
+        esperar("Organizamos la torre de mayor a menor");
         
-        t.lidedCups(); // deben ser 1 y 2 que son las que estan tapadas
+        t.orderTower();
+        
+        esperar("Se mostraran las tapas y tapas unidas");
+        t.lidedCups(); 
 
-        esperar("espera");
+        esperar("Se hara reverse al orden de la torre");
         t.reverseTower();
         
-        esperar("Torre Invertida. Los bloques Taza+Tapa deben haberse movido juntos.");
-
-    
+        esperar("Borramos la taza que estaba arriva de la torre");
+        
         t.popCup(); 
-        esperar("Se debió eliminar la Taza 3 que estaba en la cima.");
+        esperar("Se debió eliminar la Taza con id 10 que estaba en la cima.");
         
         t.pushLid(3);
-        esperar("espera");
+        esperar("Se agrego una tapa de id 3");
         
+        esperar("Se eliminara la tapa de la cima de la torre");
         t.popLid(); 
-        esperar("espera");
         
-        t.pushCup(20); // no debe funcionar
+        esperar("Se agregara una taza de id 20, pero como la altura maxima es 30, no lo dejara");
+        t.pushCup(20); 
         
-        esperar("espera");
         t.height(); 
        
+        esperar("Se agregara una tapa de id 4");
         t.pushLid(4);
-        esperar("espera");
         
+        esperar("se agregara una tapa de id 3");
         t.pushCup(3);
-        esperar("espera");
         
+        esperar("Se agregara uan tapa de id 4");
         t.pushCup(4);
-        esperar("espera");
         
+        esperar("Ordenamos la torre");
         t.orderTower();
-        esperar("espera");
         
+        esperar("Reversamos el orden de la torre");
         t.reverseTower();
-        esperar("espera");
         
         t.height(); 
-        esperar("espera");
         
+        esperar("Se presentan datos finales de la torre en este punto");
+        
+        t.height();
+        t.stackingItems();
+        t.lidedCups();
+        
+        esperar("Se saldra del simulador");
         t.exit(); 
     }
 
