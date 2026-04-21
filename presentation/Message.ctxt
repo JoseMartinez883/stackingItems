@@ -1,0 +1,22 @@
+#BlueJ class context
+comment0.target=Message
+comment0.text=\r\n\ Encargada\ de\ representar\ en\ pantalla\ un\ mensaje\ que\ \r\n\ valida\ la\ no\ o\ buena\ ejecucion\ de\ una\ operacion.\r\n\ \r\n\ @author\ Jose\ Alejandro\ Martinez\ Arias\r\n\ @version\ (16-02-2026)\r\n
+comment1.params=isVisible\ isOk
+comment1.target=void\ showValidLastOperation(boolean,\ boolean)
+comment1.text=\r\n\ Mostrar\ en\ pantalla,\ si\ la\ ultima\ operacion\ si\ se\ puedo\ o\ no\ realizar\r\n\ @param\ isVisible\ si\ la\ torre\ es\ visible\ en\ pantalla\r\n\ @param\ isOk\ si\ la\ ultima\ accion\ en\ la\ torre\ se\ realizo\r\n
+comment2.params=isVisible\ height
+comment2.target=void\ showCurrentHeight(boolean,\ int)
+comment2.text=\r\n\ Mostrar\ en\ pantalla,\ la\ altura\ actual\ de\ la\ torre\r\n\ @param\ isVisible\ si\ la\ torre\ es\ visible\ en\ pantalla\r\n\ @param\ height\ altura\ actual\ de\ la\ torre\r\n
+comment3.params=isVisible\ elements
+comment3.target=void\ showstackingItems(boolean,\ java.lang.String[][])
+comment3.text=\r\n\ Mostrar\ en\ pantalla,\ los\ elementos\ actuales\ de\ la\ torre\r\n\ @param\ isVisible\ si\ la\ torre\ es\ visible\ en\ pantalla\r\n\ @param\ elements\ elementos\ de\ la\ torre\r\n
+comment4.params=
+comment4.target=void\ errormakeVisibleScreen()
+comment4.text=\r\n\ Error\ cuando\ la\ torre\ es\ demasiado\ alta\ para\ los\ p\u00EDxeles\ de\ la\ pantalla.\r\n
+comment5.params=isVisible\ unidos
+comment5.target=void\ showLidedCups(boolean,\ java.util.ArrayList)
+comment5.text=\r\n\ Mostrar\ en\ pantalla,\ los\ elementos\ con\ tazas\ tapadas\ ordenados\ de\ menor\ a\ mayor\r\n\ @param\ isVisible\ si\ la\ torre\ es\ visible\ en\ pantalla\r\n\ @param\ unidos\ elementos\ unidos\ en\ la\ torre\ (taza\ +\ tapa)\r\n
+comment6.params=isVisible\ movimiento
+comment6.target=void\ showSwapToReduce(boolean,\ java.lang.String[][])
+comment6.text=\r\n\ Mostrar\ en\ pantalla,\ los\ elementos\ que\ se\ deben\ realizar\ en\ la\ torre\r\n\ @param\ isVisible\ si\ la\ torre\ es\ visible\ en\ pantalla\r\n\ @param\ movmiento,\ movimiento\ que\ se\ debe\ realizar\ en\ la\ torre\r\n
+numComments=7

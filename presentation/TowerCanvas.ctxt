@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=TowerCanvas
+comment0.text=\r\n\ Se\ encarga\ de\ la\ representacion\ de\ los\ elementos\ de\ la\ torre\ en\ el\ canvas\r\n\ @author\ Jose\ Alejandro\ Martinez\ Arias\r\n\ @version\ 2026-03-28\r\n
+comment1.params=maxHeight
+comment1.target=TowerCanvas(int)
+comment1.text=\r\n\ Constructor,\ encargado\ de\ inicializar\ los\ atributos\r\n\ @param\ maxHeight\ altura\ maxima\ de\ la\ torre\r\n
+comment2.params=items
+comment2.target=void\ visible(java.util.ArrayList)
+comment2.text=\r\n\ Dibuja\ los\ elementos\ de\ la\ torre\ en\ pantalla\r\n\ @param\ items\ Elementos\ que\ estan\ en\ la\ torre\r\n
+comment3.params=items
+comment3.target=void\ invisible(java.util.ArrayList)
+comment3.text=\r\n\ Hace\ invisible\ los\ elementos\ de\ la\ torre\r\n\ @param\ items\ Elementos\ de\ la\ torre\r\n
+numComments=4

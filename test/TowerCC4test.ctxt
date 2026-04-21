@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.target=TowerCC4test
+comment0.text=\r\n\ Pruebas\ de\ aceptacion\ del\ ciclo\ 4\r\n\ @author\ Jose\ Alejandro\ Martinez\ Arias\r\n
+comment1.params=mensaje
+comment1.target=void\ esperar(java.lang.String)
+comment2.params=
+comment2.target=void\ testCiclo4()
+numComments=3

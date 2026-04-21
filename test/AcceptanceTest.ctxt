@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.target=AcceptanceTest
+comment0.text=\r\n\ Prueba\ para\ verificar\ el\ buen\ funcionamiento\ del\ simulador\ ciclo\ 1\r\n\ @Author\ Jose\ Alejandro\ Martinez\ Arias\r\n\ @version\ 2026-03-03\r\n
+comment1.params=mensaje
+comment1.target=void\ esperar(java.lang.String)
+comment2.params=
+comment2.target=void\ casoAceptacion()
+numComments=3

@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.target=TowerException
+comment0.text=\r\n\ Encargada\ de\ manejar\ las\ excepciones\ que\ se\ presenten\ en\ la\ torre\r\n\ *\ @author\ Jose\ Alejandro\ Martinez\ Arias\r\n
+comment1.params=mensaje
+comment1.target=TowerException(java.lang.String)
+comment1.text=\r\n\ Constructor\ de\ la\ excepci\u00F3n\r\n\ @param\ mensaje\ texto\ de\ la\ excepcion\ ocurrida\r\n
+numComments=2

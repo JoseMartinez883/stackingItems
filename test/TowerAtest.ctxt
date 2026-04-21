@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.target=TowerAtest
+comment0.text=\r\n\ Pruebas\ de\ aceptacion\ de\ lo\ mejor\ del\ proyecto\r\n\ \r\n\ @author\ Jose\ Alejandro\ Martinez\ Arias\r\n\ @version\ 1.0\r\n
+comment1.params=mensaje
+comment1.target=void\ esperar(java.lang.String)
+comment2.params=
+comment2.target=void\ caso1()
+comment3.params=
+comment3.target=void\ caso2()
+numComments=4

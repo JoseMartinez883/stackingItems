@@ -1,0 +1,10 @@
+/.classpath
+/.project
+/doc/
+/lib/
+/test/
+/shapes/
+/tower/
+/Circle.class
+/Rectangle.class
+/Triangle.class

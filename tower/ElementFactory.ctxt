@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.target=ElementFactory
+comment0.text=\r\n\ Clase\ encargada\ de\ crear\ los\ nuevos\ elementos\ que\ ingresaran\ en\ la\ torre\r\n\ @author\ Jose\ Alejandro\ Martinez\ Arias\r\n\ @version\ 03-04-2026\r\n
+comment1.params=type\ id
+comment1.target=Cup\ crearCup(java.lang.String,\ int)
+comment1.text=\r\n\ \ Crea\ una\ taza,\ teniendo\ en\ cuenta\ el\ tipo\ solicitado\r\n\ \ @param\ tipo\ tipo\ de\ taza\ solicitado\r\n\ \ @param\ id\ iddentificador\ de\ la\ taza\r\n\ \ @param\ color\ Color\ de\ la\ nueva\ taza\r\n\ \ @return\ Cup\ la\ nueva\ taza,\ segun\ el\ tipo\r\n\ \ @throws\ TowerException\ INVALID_ELEMENT_TYPE\ si\ el\ tipo\ no\ coincide\ con\ los\ disponibles.\r\n
+comment2.params=type\ id
+comment2.target=Lid\ crearLid(java.lang.String,\ int)
+comment2.text=\r\n\ \ Crea\ una\ tapa,\ teniendo\ en\ cuenta\ el\ tipo\ solicitado\r\n\ \ @param\ tipo\ tipo\ de\ tapa\ solicitado\r\n\ \ @param\ id\ iddentificador\ de\ la\ tapa\r\n\ \ @param\ color\ Color\ de\ la\ nueva\ tapa\r\n\ \ @return\ Lid\ la\ nueva\ tapa,\ segun\ el\ tipo\r\n\ \ @throws\ TowerException\ INVALID_ELEMENT_TYPE\ si\ el\ tipo\ no\ coincide\ con\ los\ disponibles.\r\n
+numComments=3

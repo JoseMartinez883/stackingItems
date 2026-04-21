@@ -1,0 +1,19 @@
+#BlueJ class context
+comment0.target=HierarchicalCup
+comment0.text=\r\n\ Taza\ Jer\u00E1rquica\ (HierarchicalCup)\:\ Desplaza\ a\ las\ menores\ y\ si\ llega\ al\ fondo,\ se\ ancla.\r\n\ @author\ Jose\ Alejandro\ Martinez\ Arias\r\n\ @version\ 2026-04-04\r\n
+comment1.params=id\ color
+comment1.target=HierarchicalCup(int,\ java.lang.String)
+comment1.text=\r\n\ Inicializa\ la\ taza\ jerarquica\r\n\ @param\ id\ identificador\ de\ la\ taza\r\n\ @param\ color\ color\ de\ la\ taza\r\n
+comment2.params=comando
+comment2.target=boolean\ validarRemocion(java.lang.String)
+comment2.text=\r\n\ Verifica\ si\ la\ copa\ se\ puede\ remover\ de\ la\ torre\ que\ se\ quiere\ remover\r\n\ @param\ comando\ elemento\ solicitado\ a\ remover\r\n\ @return\ boolean\ true\ si\ es\ el\ del\ mismo\ tipo\ solicitado,\ sino\ false\r\n
+comment3.params=xCentro\ ySuelo\ fH\ fW
+comment3.target=void\ dibujar(int,\ int,\ int,\ int)
+comment3.text=\r\n\ Dibuja\ la\ copa\ en\ la\ torre\r\n\ @param\ xCentro\ centro\ de\ la\ torre\r\n\ @param\ ySuelo\ base\ donde\ se\ posicionara\ la\ copa\r\n\ @param\ fh\ factor\ de\ la\ altura\ en\ pixeles\r\n\ @param\ fw\ factor\ del\ ancho\ en\ pixeles\r\n
+comment4.params=items
+comment4.target=boolean\ aplicarPoderContinuo(java.util.ArrayList)
+comment4.text=\r\n\ Poder\ que\ se\ ejecutara\ todo\ el\ ciclo\ de\ vida\ de\ la\ taza\r\n\ @param\ items\ elementos\ de\ la\ torre\r\n\ @return\ boolean\ true\ si\ el\ poder\ se\ ejecuto\ de\ manera\ correcta,\ sino\ false\r\n
+comment5.params=items
+comment5.target=boolean\ aplicarPoderAlEntrar(java.util.ArrayList)
+comment5.text=\r\n\ Poder\ de\ la\ taza\ jerarquica\ que\ se\ aplicara\ al\ entrar\ en\ la\ torre\r\n\ @param\ items\ elementos\ de\ la\ torre\r\n\ @return\ boolean\ true\ si\ el\ poder\ se\ ejecuto\ correctamente,\ sino\ false\r\n\ @throws\ TowerException\ POWER_FAILED\ si\ el\ poder\ falla\r\n
+numComments=6

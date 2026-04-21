@@ -1,0 +1,19 @@
+#BlueJ class context
+comment0.target=TimeBombCup
+comment0.text=\r\n\ Taza\ Bomba\ (TimeBombCup)\:\ Explota\ tras\ 3\ movimientos\ en\ la\ torre,\r\n\ se\ elimina\ a\ ella\ misma\ y\ a\ los\ elementos\ que\ tiene\ arriba\ y\ abajo\ de\ ella\r\n\ @author\ Jose\ Alejandro\ Martinez\ Arias\r\n
+comment1.params=id\ color
+comment1.target=TimeBombCup(int,\ java.lang.String)
+comment1.text=\r\n\ Inicializa\ la\ taza\ bomba\r\n\ @param\ id\ identificador\ de\ la\ taza\r\n\ @param\ color\ color\ de\ la\ taza\r\n
+comment2.params=
+comment2.target=void\ ticTac()
+comment2.text=\r\n\ Cada\ vez\ que\ se\ agregar\ una\ taza,\ se\ modifican\ los\r\n\ turnos\ que\ faltan\ para\ explotar\r\n
+comment3.params=
+comment3.target=void\ actualizarAspecto()
+comment3.text=\r\n\ Cambia\ el\ color\ de\ la\ taza\ para\ alertar\ al\ usuario\r\n
+comment4.params=xCentro\ ySuelo\ fH\ fW
+comment4.target=void\ dibujar(int,\ int,\ int,\ int)
+comment4.text=\r\n\ Dibuja\ la\ copa\ en\ la\ torre\r\n\ @param\ xCentro\ centro\ de\ la\ torre\r\n\ @param\ ySuelo\ base\ donde\ se\ posicionara\ la\ copa\r\n\ @param\ fh\ factor\ de\ la\ altura\ en\ pixeles\r\n\ @param\ fw\ factor\ del\ ancho\ en\ pixeles\r\n
+comment5.params=items
+comment5.target=void\ reaccionarTurno(java.util.ArrayList)
+comment5.text=\r\n\ Poder\ que\ se\ ejecutara\ cuando\ el\ usuario\ realizar\ una\ accion\ en\ la\ torre\r\n\ @return\ items\ elementos\ de\ la\ torre\r\n
+numComments=6

@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=OpenerCup
+comment0.text=\r\n\ Taza\ abierta\ (OpenerCup)\:\ Elimina\ todas\ las\ tapas\ que\ le\ impiden\ el\ paso.\r\n\ @author\ Jose\ Alejandro\ Martinez\ Arias\r\n\ @version\ 2026-04-04\r\n
+comment1.params=id\ color
+comment1.target=OpenerCup(int,\ java.lang.String)
+comment1.text=\r\n\ Inicializa\ la\ taza\ abierta\r\n\ @param\ id\ identificador\ de\ la\ taza\r\n\ @param\ color\ color\ de\ la\ taza\r\n
+comment2.params=xCentro\ ySuelo\ fH\ fW
+comment2.target=void\ dibujar(int,\ int,\ int,\ int)
+comment2.text=\r\n\ Dibuja\ la\ copa\ en\ la\ torre\r\n\ @param\ xCentro\ centro\ de\ la\ torre\r\n\ @param\ ySuelo\ base\ donde\ se\ posicionara\ la\ copa\r\n\ @param\ fh\ factor\ de\ la\ altura\ en\ pixeles\r\n\ @param\ fw\ factor\ del\ ancho\ en\ pixeles\r\n
+comment3.params=items
+comment3.target=boolean\ aplicarPoderContinuo(java.util.ArrayList)
+comment3.text=\r\n\ Poder\ que\ se\ ejecutara\ todo\ el\ ciclo\ de\ vida\ de\ la\ taza\r\n\ @param\ items\ elementos\ de\ la\ torre\r\n\ @return\ boolean\ true\ si\ el\ poder\ se\ ejecuto\ de\ manera\ correcta,\ sino\ false\r\n
+numComments=4

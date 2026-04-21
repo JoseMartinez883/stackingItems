@@ -1,0 +1,4 @@
+#BlueJ class context
+comment0.target=Log
+comment0.text=\r\n\ Class\ for\ recording\ unexpected\ errors\ in\ a\ log\ file.\r\n\ Intended\ for\ the\ development\ team,\ users\ should\ never\ see\ the\ raw\ log\ content.\r\n\ @author\ DOPO\r\n\ @version\ ECI\ 2026\r\n
+numComments=1

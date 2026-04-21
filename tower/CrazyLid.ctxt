@@ -1,0 +1,16 @@
+#BlueJ class context
+comment0.target=CrazyLid
+comment0.text=\r\n\ Tapa\ de\ tipo\ CrazyLid,\ no\ tapa\ a\ su\ taza,\ se\ ubica\ de\ base.\r\n\ @author\ Jose\ Alejandro\ Martinez\ Arias\r\n\ @version\ 2026-04-04\r\n
+comment1.params=id\ color
+comment1.target=CrazyLid(int,\ java.lang.String)
+comment1.text=\r\n\ Inicializa\ la\ tapa\ loca\r\n\ @param\ id\ identificador\ de\ la\ tapa\r\n\ @param\ color\ color\ de\ la\ tapa\r\n
+comment2.params=xCentro\ ySuelo\ fH\ fW
+comment2.target=void\ dibujar(int,\ int,\ int,\ int)
+comment2.text=\r\n\ Dibuja\ la\ tapa\ loca\ en\ la\ torre\r\n\ @param\ xCentro\ centro\ de\ la\ torre\r\n\ @param\ ySuelo\ base\ donde\ se\ posicionara\ la\ tapa\r\n\ @param\ fh\ factor\ de\ la\ altura\ en\ pixeles\r\n\ @param\ fw\ factor\ del\ ancho\ en\ pixeles\r\n
+comment3.params=otro
+comment3.target=boolean\ intentarCubrirCon(ElementoTorre)
+comment3.text=\r\n\ Verifica\ si\ la\ tapa\ se\ puede\ cubrir\ con\ otro\ elemento\r\n\ @param\ otro\ elemento\ con\ el\ que\ se\ cubrira\r\n\ @boolen\ true,\ como\ esta\ loca\ cree\ que\ tiene\ interior\r\n
+comment4.params=items
+comment4.target=boolean\ aplicarPoderContinuo(java.util.ArrayList)
+comment4.text=\r\n\ Poder\ que\ se\ ejecutara\ todo\ el\ ciclo\ de\ vida\ de\ la\ tapa\r\n\ @param\ items\ elementos\ de\ la\ torre\r\n\ @return\ boolean\ true\ si\ el\ poder\ se\ ejecuto\ de\ manera\ correcta,\ sino\ false\r\n
+numComments=5
